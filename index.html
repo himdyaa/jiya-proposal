@@ -379,13 +379,13 @@
     window.scrollTo(0,0);
     if(index===1){requestAnimationFrame(function(){placeNo(true);});}
     var cue=document.getElementById('scrollCue');
-    cue.hidden=index!==4;
+    cue.hidden=(index!==4&&index!==8);
     if(index===4){requestAnimationFrame(function(){window.scrollTo(0,0);cue.hidden=false;});}
   }
   function updateScrollCue(){
     var cue=document.getElementById('scrollCue');
     if(!cue)return;
-    cue.hidden=current!==4||window.scrollY>520;
+    cue.hidden=(current!==4&&current!==8)||window.scrollY>520;
   }
   document.getElementById('scrollCue').addEventListener('click',function(){
     window.scrollBy({top:Math.max(300,window.innerHeight*.72),behavior:'smooth'});
