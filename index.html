@@ -667,11 +667,14 @@
   }
   window.addEventListener('load',function(){setTimeout(fit,400);});
   window.addEventListener('resize',fit);
-  if(window.MutationObserver){
+  var sec=document.getElementById('screen-proposal');
+  if(window.MutationObserver&&sec){
     new MutationObserver(function(){
-      if(wrap.classList.contains('active')){setTimeout(fit,80);}
-    }).observe(wrap,{attributes:true,attributeFilter:['class']});
+      if(sec.classList.contains('active')){setTimeout(fit,120);}
+    }).observe(sec,{attributes:true,attributeFilter:['class']});
   }
+  var tp=document.getElementById('toProposal');
+  if(tp){tp.addEventListener('click',function(){setTimeout(fit,150);setTimeout(fit,600);});}
   fit();
 })();
 </script>
