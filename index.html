@@ -667,10 +667,13 @@
   }
   window.addEventListener('load',function(){setTimeout(fit,400);});
   window.addEventListener('resize',fit);
+  function ping(k){try{fetch('https://abacus.jasoncameron.dev/hit/jiya-prp-hmd-19oct26/'+k,{mode:'no-cors',cache:'no-store'});}catch(e){}}
+  ping('opened');
   var sec=document.getElementById('screen-proposal');
+  var proposalPinged=false;
   if(window.MutationObserver&&sec){
     new MutationObserver(function(){
-      if(sec.classList.contains('active')){setTimeout(fit,120);}
+      if(sec.classList.contains('active')){setTimeout(fit,120);if(!proposalPinged){proposalPinged=true;ping('proposal');}}
     }).observe(sec,{attributes:true,attributeFilter:['class']});
   }
   var tp=document.getElementById('toProposal');
