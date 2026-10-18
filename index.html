@@ -340,8 +340,31 @@
         <p class="video-status">Your 42-second birthday slideshow is ready.</p>
         <a class="primary video-download" id="videoDownload" href="https://drive.google.com/uc?export=download&amp;id=1I-g98CVVE6sxvvTBIyoQnAs_mAOOPXmc" target="_blank" rel="noopener noreferrer">Download the Birthday Video</a>
       </div>
+      <button class="primary" id="toProposal" type="button" style="margin-top:18px">Ek Aakhri Surprise 💝</button>
     </div>
   </section>
+
+  <section class="screen proposal-sec" id="screen-proposal" aria-labelledby="proposal-title">
+  <div class="proposal-head">💝</div>
+  <h2 class="proposal-title" id="proposal-title">Ek Aakhri Surprise…</h2>
+  <p class="proposal-sub">Is card ko ungli se scratch karo 👇</p>
+  <div class="scratch-wrap" id="scratchWrap">
+    <div class="proposal-msg" id="proposalMsg">
+      <p>Hii Jiuu…!🙈</p>
+      <p>Oyy meko pta nahi yar ap mujhe pyar karte ho ya nahi karte ho, mai janna bhi nhi chahuga kyuki n mujhe bs apke sath rhna hai pgluu…! Apka gussa krna meko aur bhi khush krta hai pta nhi kyu to but aesa lagta hai jese ap meri care kr rhe ho gussa krke!</p>
+      <p>Kabhi kabhi chid bhi jate ho yar, but kya karu mujhe pyare hi itne lgte ho aap🥲</p>
+      <p>Oy nhi ptaa yarr kyu🥺 but sahi me bohot bohotttttt bohottttt jyada attachment ho gyi hai apse..!</p>
+      <p>Mujhe to apse kuchh bhi nhi chahiye bs ap rho mere sath aur koi aur ldke ko bhav na do bs yhi chahta hu mai!🥺</p>
+      <p>Bohot bar to bol chuka hu, but aaj apka bday hai, to fir se aur ek bar;</p>
+      <span class="ask">“Bnoge meri girlfrend !?” 💍</span>
+      <p>Mammi ksm , papa ksm, meri chhoti bahan ki ksm… dharti, vayu, agni ki ksm hmesa sath dunga apka, har ek mod pe sath rhuga apke aurr bohot jyada pyar kruga🥺…</p>
+      <p>Agar apki haa hogi to mujhe message pe reaction me ‘❤️’ dena ya to ‘👍’ de dena..!</p>
+      <p>Mana to kiye ho bohot bar ki mt bola kro🥺.. but bday wale din bina bole to meh reh nhi skta pta he apko🥺</p>
+      <p class="finale">“Mere taraf se apko , apke janmdin ki dher sari shubhkamnaye…. And LOVE YOU SO MUCH MY PRINCESS” 💖</p>
+    </div>
+    <canvas id="scratchCv"></canvas>
+  </div>
+</section>
 
   <button class="scroll-cue" id="scrollCue" type="button" hidden><span>Scroll down</span><span class="arrow" aria-hidden="true">↓</span></button>
   <div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -464,6 +487,7 @@
   });
   document.getElementById('toLetter').addEventListener('click',function(){if(opened===3)show(6);});
   document.getElementById('toCake').addEventListener('click',function(){show(7);});
+  document.getElementById('toProposal').addEventListener('click',function(){show(8);burst(24);});
   document.getElementById('wishBtn').addEventListener('click',function(){
     var flames=document.querySelectorAll('.flame');flames.forEach(function(f){f.style.display='none';});
     var cakeScene=document.querySelector('.cake-scene');cakeScene.classList.add('celebrate');setTimeout(function(){cakeScene.classList.remove('celebrate');},1000);
@@ -584,6 +608,8 @@
 })();
 </script>
 <style>
+.screen.proposal-sec{display:none}
+.screen.proposal-sec.active{display:block;animation:reveal .42s ease both}
 .proposal-sec{max-width:540px;margin:0 auto;padding:56px 20px 90px;text-align:center}
 .proposal-head{font-size:54px;animation:beat 1.2s ease-in-out infinite}
 @keyframes beat{0%,100%{transform:scale(1)}25%{transform:scale(1.18)}}
@@ -596,27 +622,7 @@
 .proposal-msg .finale{text-align:center;font-weight:700;color:#ffb3c9;margin-bottom:0}
 #scratchCv{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:pointer;display:block}
 </style>
-<section class="proposal-sec">
-  <div class="proposal-head">💝</div>
-  <h2 class="proposal-title">Ek Aakhri Surprise…</h2>
-  <p class="proposal-sub">Is card ko ungli se scratch karo 👇</p>
-  <div class="scratch-wrap" id="scratchWrap">
-    <div class="proposal-msg" id="proposalMsg">
-      <p>Hii Jiuu…!🙈</p>
-      <p>Oyy meko pta nahi yar ap mujhe pyar karte ho ya nahi karte ho, mai janna bhi nhi chahuga kyuki n mujhe bs apke sath rhna hai pgluu…! Apka gussa krna meko aur bhi khush krta hai pta nhi kyu to but aesa lagta hai jese ap meri care kr rhe ho gussa krke!</p>
-      <p>Kabhi kabhi chid bhi jate ho yar, but kya karu mujhe pyare hi itne lgte ho aap🥲</p>
-      <p>Oy nhi ptaa yarr kyu🥺 but sahi me bohot bohotttttt bohottttt jyada attachment ho gyi hai apse..!</p>
-      <p>Mujhe to apse kuchh bhi nhi chahiye bs ap rho mere sath aur koi aur ldke ko bhav na do bs yhi chahta hu mai!🥺</p>
-      <p>Bohot bar to bol chuka hu, but aaj apka bday hai, to fir se aur ek bar;</p>
-      <span class="ask">“Bnoge meri girlfrend !?” 💍</span>
-      <p>Mammi ksm , papa ksm, meri chhoti bahan ki ksm… dharti, vayu, agni ki ksm hmesa sath dunga apka, har ek mod pe sath rhuga apke aurr bohot jyada pyar kruga🥺…</p>
-      <p>Agar apki haa hogi to mujhe message pe reaction me ‘❤️’ dena ya to ‘👍’ de dena..!</p>
-      <p>Mana to kiye ho bohot bar ki mt bola kro🥺.. but bday wale din bina bole to meh reh nhi skta pta he apko🥺</p>
-      <p class="finale">“Mere taraf se apko , apke janmdin ki dher sari shubhkamnaye…. And LOVE YOU SO MUCH MY PRINCESS” 💖</p>
-    </div>
-    <canvas id="scratchCv"></canvas>
-  </div>
-</section>
+
 <script>
 (function(){
   var wrap=document.getElementById('scratchWrap');
@@ -671,6 +677,11 @@
   }
   window.addEventListener('load',function(){setTimeout(fit,400);});
   window.addEventListener('resize',fit);
+  if(window.MutationObserver){
+    new MutationObserver(function(){
+      if(wrap.classList.contains('active')){setTimeout(fit,80);}
+    }).observe(wrap,{attributes:true,attributeFilter:['class']});
+  }
   fit();
 })();
 </script>
