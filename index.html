@@ -336,10 +336,6 @@
       </div>
       <button class="primary wish-btn" id="wishBtn" type="button">Blow Out the Candles</button>
       <p class="final-note" id="finalNote" aria-live="polite"></p>
-      <div class="video-maker" id="videoMaker">
-        <p class="video-status">Your 42-second birthday slideshow is ready.</p>
-        <a class="primary video-download" id="videoDownload" href="https://drive.google.com/uc?export=download&amp;id=1I-g98CVVE6sxvvTBIyoQnAs_mAOOPXmc" target="_blank" rel="noopener noreferrer">Download the Birthday Video</a>
-      </div>
       <button class="primary" id="toProposal" type="button" style="margin-top:18px">Ek Aakhri Surprise 💝</button>
     </div>
   </section>
@@ -493,13 +489,7 @@
     var cakeScene=document.querySelector('.cake-scene');cakeScene.classList.add('celebrate');setTimeout(function(){cakeScene.classList.remove('celebrate');},1000);
     this.textContent='Wish Made ♡';this.disabled=true;
     document.getElementById('finalNote').textContent='Happy Birthday, JIYA PANJWANI! May your wish come true.';burst(72);
-    revealVideoDownload();
   });
-  var birthdayVideoUrl='https://drive.google.com/uc?export=download&id=1I-g98CVVE6sxvvTBIyoQnAs_mAOOPXmc';
-  function revealVideoDownload(){
-    document.getElementById('videoDownload').href=birthdayVideoUrl;
-    document.getElementById('videoMaker').hidden=false;
-  }
   function burst(count){
     var wrap=document.getElementById('confetti');var colors=['#b51548','#d98f36','#f6bdc9','#6f1030','#ffffff'];
     for(var i=0;i<count;i++){
